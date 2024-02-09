@@ -28,8 +28,6 @@ public class ConsultationFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentConsultationBinding.inflate(inflater, container, false);
 
-//        EditText txtNumRes = getActivity().findViewById(R.id.txtNumRes);
-//        Button btnConsulter = getActivity().findViewById(R.id.btnConsulter);
 //         Attribuer un écouteur d'évènement au bouton btnajouter
         binding.btnConsulter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
