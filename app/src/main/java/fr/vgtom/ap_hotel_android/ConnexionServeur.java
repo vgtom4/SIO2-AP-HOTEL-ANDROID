@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+//Classe pour la connexion au serveur et la récupération des données en JSON
 public class ConnexionServeur extends AsyncTask<Void, Void, String> {
     private String strurl;
     private String data = "";
@@ -25,6 +26,7 @@ public class ConnexionServeur extends AsyncTask<Void, Void, String> {
     }
 
     @Override
+    // Méthode appelée après l'exécution de la tâche asynchrone
     protected void onPostExecute(String response) {
         data = response;
         System.out.println("--------ici----------\n" + response);
@@ -32,6 +34,7 @@ public class ConnexionServeur extends AsyncTask<Void, Void, String> {
     }
 
     @Override
+    // Désérialisation des données JSON reçues du serveur
     protected String doInBackground(Void... voids) {
         try {
             URL url = new URL(strurl);
@@ -51,6 +54,7 @@ public class ConnexionServeur extends AsyncTask<Void, Void, String> {
         }
     }
 
+    // Méthode pour récupérer les données reçues du serveur
     public String getData() {
         System.out.println("-------------------------------------------------------------------------\n" +
                             "getData: " + data);

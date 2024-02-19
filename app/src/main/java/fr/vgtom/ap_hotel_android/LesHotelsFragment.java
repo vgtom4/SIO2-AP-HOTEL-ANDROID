@@ -21,9 +21,12 @@ public class LesHotelsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Récupération de la liste des hôtels depuis l'API
         ConnexionServeur cnnSrvHotel = new ConnexionServeur(varglobale.urlToAPI("getAllHotels"));
+        // Mise en place d'un callback pour l'affichage des données récupérées
         cnnSrvHotel.registerOnPostExecutionCallback(new Runnable() {
             @Override
+            // Méthode appelée après la récupération des données
             public void run() {
                 afficherFluxJsonDansListView(cnnSrvHotel.getData());
             }
@@ -33,11 +36,13 @@ public class LesHotelsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_les_hotels, container, false);
     }
 
+    // Méthode pour afficher les données récupérées dans une ListView
     private void afficherFluxJsonDansListView(String unechainejson) {
         try {
             ListView monlistview = requireView().findViewById(R.id.lstHotels);
             ArrayAdapter<String> adapterHotelsName = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1);
             JSONArray dataHotels = new JSONArray(unechainejson);
+            // Parcours des données récupérées pour les afficher dans la ListView (nom des hôtels)
             for (int i = 0; i < dataHotels.length(); i++) {
                 JSONObject unelement = dataHotels.getJSONObject(i);
                 adapterHotelsName.add(unelement.getString("nom"));
@@ -61,6 +66,7 @@ public class LesHotelsFragment extends Fragment {
         }
     }
 
+    // Méthode pour changer de fragment et afficher les informations de l'hôtel sélectionné
     private void SwitchToInfoHotel(){
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

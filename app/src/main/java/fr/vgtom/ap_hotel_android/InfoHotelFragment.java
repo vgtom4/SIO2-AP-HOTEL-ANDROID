@@ -19,6 +19,7 @@ public class InfoHotelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         try{
+            // Récupération des informations de l'hôtel depuis l'API en fonction de l'identifiant de l'hôtel courant (currentHotelId) stocké dans la variable globale
             ConnexionServeur cnnSrvHotel = new ConnexionServeur(varglobale.urlToAPI("getHotel", "nohotel=" + varglobale.currentHotelId.toString()));
             cnnSrvHotel.registerOnPostExecutionCallback(new Runnable() {
                 @Override
@@ -35,6 +36,7 @@ public class InfoHotelFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_info_hotel, container, false);
     }
 
+    // Méthode pour afficher les informations de l'hôtel dans les TextView et l'image dans l'ImageView
     public void ShowInfo (String info) {
         try {
             TextView lblNom = (TextView) getActivity().findViewById(R.id.lblNomHotel);
@@ -70,6 +72,7 @@ public class InfoHotelFragment extends Fragment {
     }
 
     ImageView imgHotel;
+    // Méthode pour afficher l'image de l'hôtel dans l'ImageView
     public void ShowImage (String imgName) {
         imgHotel = (ImageView) requireActivity().findViewById(R.id.photoHotel);
         int resID = getResources().getIdentifier("_"+imgName.substring(0, imgName.length() - 4), "drawable", requireActivity().getPackageName());

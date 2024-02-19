@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new LesHotelsFragment());
 
+        // Gestion des clics sur les éléments du menu de navigation en bas de l'écran
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.menu_hotels)
                 replaceFragment(new LesHotelsFragment());
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//    Permet de remplacer un fragment par un autre dans le layout frameLayout de l'activité principale
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
