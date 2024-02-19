@@ -20,13 +20,13 @@ L'application permet de :
 
 ## Visuels de l'interface de l'application
 
-### Page d'accueil (liste des hôtels) :
+### Interface de visualisation de la liste d'hôtels :
 ![](imagesProjet/preview_listehotels.png)
 
-### Page de visualisation des informations d'un hôtel :
+### Interface de visualisation des informations d'un hôtel :
 ![](imagesProjet/preview_infohotel.png)
 
-### Page de formulaire de création de réservation :
+### Interface de visualisation des informations d'une réservation :
 ![](imagesProjet/preview_consultation.png)
 
 
