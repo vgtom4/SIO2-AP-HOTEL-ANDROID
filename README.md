@@ -35,7 +35,7 @@ L'application permet de :
 ## Comment joindre la base de données du projet ?
 
 *Explication pour Microsoft SQL Server Management Studio*
---> Récupérez le fichier scriptBDD.sql de la base de données.
+--> Récupérez le fichier [scriptBDD.sql](scriptBDD.sql) de la base de données.
 Dans MSSMS, faites "**Nouvelle requête**" -> *Collez le script* -> "**Exécuter**".
 
 ## Comment lier une base de données au projet ?
